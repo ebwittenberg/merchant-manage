@@ -1,6 +1,7 @@
 import React from 'react';
 import { store } from '../store';
 import Item from './Item';
+import AddPo from './AddPo';
 
 function InventoryDashboard() {
     const state = store.getState();
@@ -8,6 +9,7 @@ function InventoryDashboard() {
         <div>
             <h2>Inventory Dashboard</h2>
 
+            <AddPo />
             <table>
                 <tbody>
                     <tr>
