@@ -23,6 +23,28 @@
   color: #61dafb;
 }
 
+table {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+table, th, td {
+  border: 1px solid blue;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+td:hover {
+  background-color: 'blue'
+}
+
+th {
+  background-color: #587ca0
+} 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
