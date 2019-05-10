@@ -7,20 +7,26 @@ function TrackingList({shipments}) {
 
     console.log(shipments);
     return (
-    <table>
-        <tbody>
-            <tr>
-                <th>Item ID</th>
-                <th>Purchase QTY</th>
-                <th>Tracking Number</th>
-                <th>Status</th>
-            </tr>
+        <div>
+            <h3>Current Shipments</h3>
 
-            {
-                shipments.map((trackingObject, index) => <Shipment details={trackingObject}/>)
-            }
-        </tbody>
-    </table>
+            <table style={{marginBottom: '100px'}}>
+                <tbody>
+                    <tr>
+                        <th>Item ID</th>
+                        <th>Purchase QTY</th>
+                        <th>Tracking Number</th>
+                        <th>Status</th>
+                    </tr>
+
+                    {
+                        shipments.map((trackingObject, index) => <Shipment details={trackingObject}/>)
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
     )
 
 }

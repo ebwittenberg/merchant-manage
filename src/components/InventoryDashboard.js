@@ -31,7 +31,7 @@ class InventoryDashboard extends React.Component {
                     inputValue={this.state.purchaseQty}
                     handleFormSubmit={this._onPOSubmit}
                 />
-                <table>
+                <table className="inventory-table">
                     <tbody>
                         <tr>
                             <th>Item ID</th>
