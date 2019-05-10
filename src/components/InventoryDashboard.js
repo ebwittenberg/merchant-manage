@@ -9,8 +9,8 @@ class InventoryDashboard extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            itemOnPO: '1001',
-            purchaseQty: null
+            itemOnPO: 'Item ID',
+            purchaseQty: ''
         }
     }
 
@@ -19,10 +19,12 @@ class InventoryDashboard extends React.Component {
         return (
             <div>
                 <h2 style={{textAlign: 'center'}}>Inventory Dashboard</h2>
+                <h3 style={{textAlign: 'right', marginRight: '20px'}}>Your Ware2Go warehouse ID: {state.inventory[0].warehouseID}</h3>
                 <h3>Add New Purchase Order</h3>
                 <AddPo 
                     onStockChange={this._changePurchaseQty}
                     onItemChange={this._changeItemOnPO}
+                    selectedItem={this.state.itemOnPO}
                     inputValue={this.state.purchaseQty}
                     handleFormSubmit={this._onPOSubmit}
                 />
@@ -32,12 +34,11 @@ class InventoryDashboard extends React.Component {
                             <th>Item ID</th>
                             <th>Name</th>
                             <th>Stock</th>
-                            <th>Ware2Go Warehouse ID</th>
                         </tr>
     
     
                         {
-                            state.inventory.map(i => <Item details={i} />)
+                            state.inventory.map((i, index) => <Item key={index} details={i} />)
                         }
                     </tbody>
                 </table>
@@ -64,7 +65,11 @@ class InventoryDashboard extends React.Component {
         console.log(this.state.itemOnPO);
         console.log(this.state.purchaseQty);
         // needs to dispatch an action to the reducer
-        this.props.handleSubmit(this.state.itemOnPO, this.state.purchaseQty)
+        this.props.handleSubmit(this.state.itemOnPO, this.state.purchaseQty);
+        this.setState({
+            itemOnPO: 'Item ID',
+            purchaseQty: ''
+        })
 
     }
 }

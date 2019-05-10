@@ -1,10 +1,10 @@
 import React from 'react';
 import { store } from '../store';
 
-function AddPo({ onStockChange, onItemChange, inputValue, handleFormSubmit }) {
+function AddPo({ onStockChange, onItemChange, inputValue, handleFormSubmit, selectedItem }) {
     const inventory = store.getState().inventory;
 
-    const options = inventory.map(item => <option>{item.id}</option>)
+    const options = inventory.map((item, i) => <option key={i}>{item.id}</option>)
 
     return (
         <form
@@ -15,8 +15,9 @@ function AddPo({ onStockChange, onItemChange, inputValue, handleFormSubmit }) {
         >
             <select
                 onChange={(e) => onItemChange(e.target.value)}
+                value={selectedItem}
             >
-                <option disabled selected>Item ID</option>
+                <option disabled>Item ID</option>
                 {
                     options
                 }
