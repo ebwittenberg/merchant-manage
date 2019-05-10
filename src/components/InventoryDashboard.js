@@ -9,7 +9,7 @@ class InventoryDashboard extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            itemOnPO: '',
+            itemOnPO: '1001',
             purchaseQty: 0
         }
     }
@@ -62,6 +62,8 @@ class InventoryDashboard extends React.Component {
     _onPOSubmit = () => {
         console.log(this.state.itemOnPO);
         console.log(this.state.purchaseQty);
+        // needs to dispatch an action to the reducer
+        this.props.handleSubmit(this.state.itemOnPO, this.state.purchaseQty)
 
     }
 }

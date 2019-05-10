@@ -5,6 +5,32 @@
 export function inventoryReducer(state='', action) {
     // switch, case statement here...
     switch(action.type) {
+        case 'ACTION_ADJUST_STOCK':
+            console.log(action);
+            // needs to return state object with just the specific item's stock changed
+            const newInventoryArray = state.inventory.map(item => {
+                // if the item id matches the item ID we are trying to edit
+                console.log(item.id);
+                if (item.id === parseInt(action.payload.itemID)) {
+                    console.log('if block is running')
+                    return {
+                        // the whole item
+                        ...item,
+                        // with the stock changed
+                        stock: [item.stock] - action.payload.purchaseQty
+                    }
+                } else {
+                    // just return the item object as is
+                    return {
+                        ...item
+                    }
+                }
+            })
+            return {
+                // copy everything in state
+                ...state,
+                inventory: newInventoryArray
+            }
         default: 
             return state;
     }
