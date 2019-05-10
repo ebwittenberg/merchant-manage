@@ -6,6 +6,7 @@ function Item({details}) {
             <td>{details.id}</td>
             <td>{details.name}</td>
             <td>{details.stock}</td>
+            <td>{details.warehouseID}</td>
         </tr>
 
     )

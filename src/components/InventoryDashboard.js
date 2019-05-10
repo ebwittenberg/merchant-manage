@@ -10,7 +10,7 @@ class InventoryDashboard extends React.Component {
         super(props);
         this.state={
             itemOnPO: '1001',
-            purchaseQty: 0
+            purchaseQty: null
         }
     }
 
@@ -18,8 +18,8 @@ class InventoryDashboard extends React.Component {
         const state = store.getState();
         return (
             <div>
-                <h2>Inventory Dashboard</h2>
-    
+                <h2 style={{textAlign: 'center'}}>Inventory Dashboard</h2>
+                <h3>Add New Purchase Order</h3>
                 <AddPo 
                     onStockChange={this._changePurchaseQty}
                     onItemChange={this._changeItemOnPO}
@@ -32,6 +32,7 @@ class InventoryDashboard extends React.Component {
                             <th>Item ID</th>
                             <th>Name</th>
                             <th>Stock</th>
+                            <th>Ware2Go Warehouse ID</th>
                         </tr>
     
     

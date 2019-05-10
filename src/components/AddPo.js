@@ -16,6 +16,7 @@ function AddPo({ onStockChange, onItemChange, inputValue, handleFormSubmit }) {
             <select
                 onChange={(e) => onItemChange(e.target.value)}
             >
+                <option disabled selected>Item ID</option>
                 {
                     options
                 }
@@ -25,6 +26,7 @@ function AddPo({ onStockChange, onItemChange, inputValue, handleFormSubmit }) {
                 type="number"
                 onChange={(e) => onStockChange(e.target.value)}
                 value={inputValue}
+                placeholder="Purchase Quantity"
             />
 
             <button type="submit">Submit PO</button>
