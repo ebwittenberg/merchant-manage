@@ -2,6 +2,7 @@ import React from 'react';
 import { store } from '../store';
 import Item from './Item';
 import AddPo from './AddPo';
+import TrackingList from '../containers/TrackingListContainer';
 
 // inventoryDashboard needs to track value of item the PO is for and stock value
 class InventoryDashboard extends React.Component {
@@ -17,6 +18,7 @@ class InventoryDashboard extends React.Component {
     render() {
         const state = store.getState();
         console.log(state);
+        console.log(state.tracking);
         return (
             <div>
                 <h2 style={{textAlign: 'center'}}>Inventory Dashboard</h2>
@@ -43,8 +45,10 @@ class InventoryDashboard extends React.Component {
                         }
                     </tbody>
                 </table>
-    
-    
+                {
+                    state.tracking.length ? <TrackingList /> : null
+                }
+
             </div>
         )
     }

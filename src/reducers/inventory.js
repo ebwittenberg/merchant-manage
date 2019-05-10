@@ -11,7 +11,8 @@ export function inventoryReducer(state='', action) {
             const trackingObject = {
                 itemID: parseInt(action.payload.itemID),
                 purchaseQty: parseInt(action.payload.purchaseQty),
-                trackingNum: '1ZW23X1323158WZA89'
+                trackingNum: '1ZW23X1323158WZA89',
+                status: 'shipped'
             }
 
             // needs to return state object with just the specific item's stock changed
