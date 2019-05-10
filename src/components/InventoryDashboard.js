@@ -16,6 +16,7 @@ class InventoryDashboard extends React.Component {
 
     render() {
         const state = store.getState();
+        console.log(state);
         return (
             <div>
                 <h2 style={{textAlign: 'center'}}>Inventory Dashboard</h2>

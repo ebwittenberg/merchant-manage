@@ -7,6 +7,13 @@ export function inventoryReducer(state='', action) {
     switch(action.type) {
         case 'ACTION_ADJUST_STOCK':
             console.log(action);
+            // create a new PO in tracking tab
+            const trackingObject = {
+                itemID: parseInt(action.payload.itemID),
+                purchaseQty: parseInt(action.payload.purchaseQty),
+                trackingNum: '1ZW23X1323158WZA89'
+            }
+
             // needs to return state object with just the specific item's stock changed
             const newInventoryArray = state.inventory.map(item => {
                 // if the item id matches the item ID we are trying to edit
@@ -29,7 +36,10 @@ export function inventoryReducer(state='', action) {
             return {
                 // copy everything in state
                 ...state,
-                inventory: newInventoryArray
+                // create new inventory array
+                inventory: newInventoryArray,
+                tracking: [...state.tracking, trackingObject]
+
             }
         default: 
             return state;

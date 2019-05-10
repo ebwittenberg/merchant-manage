@@ -38,7 +38,9 @@ const initialState = {
             cost: 54.99,
             warehouseID: 23
         }
-    ]
+    ],
+
+    tracking: []
 }
 
 // need to pass reducer into this, and maybe initial state?
