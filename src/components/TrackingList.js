@@ -5,7 +5,6 @@ import Shipment from './Shipment';
 // will get an array of just the tracking objects from state
 function TrackingList({shipments}) {
 
-    console.log(shipments);
     return (
         <div>
             <h3>Current Shipments</h3>
@@ -20,7 +19,7 @@ function TrackingList({shipments}) {
                     </tr>
 
                     {
-                        shipments.map((trackingObject, index) => <Shipment details={trackingObject}/>)
+                        shipments.map((trackingObject, index) => <Shipment key={index} details={trackingObject}/>)
                     }
                 </tbody>
             </table>

@@ -17,8 +17,6 @@ class InventoryDashboard extends React.Component {
 
     render() {
         const state = store.getState();
-        console.log(state);
-        console.log(state.tracking);
         return (
             <div>
                 <h2 style={{textAlign: 'center'}}>Inventory Dashboard</h2>
@@ -67,8 +65,6 @@ class InventoryDashboard extends React.Component {
     }
 
     _onPOSubmit = () => {
-        console.log(this.state.itemOnPO);
-        console.log(this.state.purchaseQty);
         // needs to dispatch an action to the reducer
         this.props.handleSubmit(this.state.itemOnPO, this.state.purchaseQty);
         this.setState({

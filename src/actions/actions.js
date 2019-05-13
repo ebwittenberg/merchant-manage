@@ -1,5 +1,3 @@
-import { maxHeaderSize } from "http";
-
 export function reduceStock(itemID, purchaseQty) {
     // needs to return an object with a type and payload
     const randomNum = Math.floor(Math.random() * 99);
