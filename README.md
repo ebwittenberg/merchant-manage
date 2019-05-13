@@ -15,3 +15,8 @@ This app is designed for merchants with purchase orders coming in from their sal
 
 ## Dashboard with a current shipment
 ![alt-text](https://raw.githubusercontent.com/ebwittenberg/merchant-manage/master/images/dashboard-with-po.png)
+
+#### Technologies
+- React
+- Redux
+
